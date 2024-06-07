@@ -1,13 +1,15 @@
 import { fastify } from 'fastify'
 import { routes } from './routes/routes'
+import cors from '@fastify/cors'
 
 export const server = fastify()
 
-server.register(routes)
+server.setErrorHandler((error, request, reply) => {
+  reply.code(400).send({ message: error.message })
+}) 
 
-server.get('/', () => {
-  return "Hello World"
-})
+server.register(cors)
+server.register(routes)
 
 server.listen({ port: 3333 }, function (err, address) {
   if (err) {
