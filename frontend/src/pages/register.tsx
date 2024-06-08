@@ -1,5 +1,6 @@
-import { ChakraProvider, Box, Input, InputGroup, InputLeftElement, Button, VStack, HStack, Text, Link } from '@chakra-ui/react';
+import { ChakraProvider, Box, Input, InputGroup, InputLeftElement, Button, VStack, HStack, Text } from '@chakra-ui/react';
 import { MdOutlineMail, MdKey, MdPersonOutline, MdCheck } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 
 export default function Login(){
@@ -34,7 +35,7 @@ export default function Login(){
                 <Input placeholder='Confirmação de Senha' />
               </InputGroup>
               <Button colorScheme="blue" size="md">Cadastrar</Button>
-              <Link>Já tenho uma conta.</Link>
+              <Link to={`/`}>Já tenho uma conta.</Link>
             </VStack>
           </HStack>
       </Box>
