@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ChakraProvider, Box, Input, InputGroup, InputLeftElement, Button, VStack, Text, FormControl, FormLabel, Center } from '@chakra-ui/react';
 import { MdOutlineMail, MdKey, MdPersonOutline, MdCheck } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { api } from '../services/api'
 
 interface FormData {
   name: string;
@@ -28,7 +29,7 @@ export default function Signup() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+  async function handleSubmit (e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     if (!formData.name || !formData.email || !formData.password || !formData.confirmPassword) {
@@ -43,7 +44,14 @@ export default function Signup() {
 
     setError('');
 
-  };
+    const response = await api.post("/users", {
+      name: formData.name,
+      email: formData.email,
+      password: formData.password,
+    })
+
+    console.log(response)
+  }
 
   return (
     <ChakraProvider>
