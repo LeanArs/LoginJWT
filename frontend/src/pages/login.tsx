@@ -8,7 +8,7 @@ export default function Login(){
       <ChakraProvider>
       <Box display="flex" alignItems="center" justifyContent="center" minHeight="100vh" bg="gray.100">
           
-          <HStack spacing={8} bg="white"  borderRadius="md" boxShadow="md" maxWidth="800px" height="45vh" p={6}>
+          <HStack spacing={8} bg="white"  borderRadius="md" boxShadow="md" maxWidth="800px" height="400px" p={6}>
             <VStack spacing={4} width="50%" >
               <Text fontSize='3xl'>LoginJWT</Text>
               <InputGroup>
@@ -33,7 +33,7 @@ export default function Login(){
             </VStack>
             <VStack width="50%" alignItems="flex-start">
               <Text fontSize="lg" fontWeight="bold" mb={4}>O que é isso?</Text>
-              <Text >LoginJWT é um projeto simples que surgiu com o objetivo de colocar em prática todas as boas práticas na criação de um sistema de autenticação.</Text>
+              <Text >LoginJWT é um projeto simples que surgiu com o objetivo de colocar em prática todas as boas práticas (que eu conheço) na criação de um sistema de autenticação.</Text>
               <Link to={`about`}>Saiba mais.</Link>
             </VStack>
           </HStack>
