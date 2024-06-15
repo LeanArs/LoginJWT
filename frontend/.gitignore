@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 
 infos.txt
+
+.netlify
