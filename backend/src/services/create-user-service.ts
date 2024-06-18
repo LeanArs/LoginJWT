@@ -1,4 +1,5 @@
 import prismaClient from "../prisma"
+const bcrypt = require('bcrypt');
 
 interface CreateUserProps{
     name: string,
@@ -8,18 +9,20 @@ interface CreateUserProps{
 
 class CreateUserService{
     async execute({ name, email, password }: CreateUserProps){
-        
-        // Inserção no banco
+
+        const saltRounds = 10
+        const salt = await bcrypt.genSalt(saltRounds)
+        const hash = await bcrypt.hash(password, salt);
 
         const user = await prismaClient.user.create({
-            data:{
+            data: {
                 name,
                 email,
-                password,
+                password: hash,
             }
-        })
+        });
 
-        return user
+        return user;
     }
 }
 

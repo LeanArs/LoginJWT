@@ -2,7 +2,7 @@ import { fastify } from 'fastify'
 import { routes } from './routes/routes'
 import cors from '@fastify/cors'
 
-const port = Number(process.env.PORT) || 3000;
+const port = Number(process.env.PORT) || 3333;
 const host = ("RENDER" in process.env) ? `0.0.0.0` : `localhost`;
 
 export const server = fastify()
@@ -14,7 +14,7 @@ server.setErrorHandler((error, request, reply) => {
 server.register(cors)
 server.register(routes)
 
-server.listen({ host:host, port: port }, function (err, address) {
+server.listen({ host:host, port: port }, function (err) {
   if (err) {
     server.log.error(err)
     process.exit(1)

@@ -15,7 +15,7 @@ export default function Login(){
                 <InputLeftElement pointerEvents='none'>
                 <MdOutlineMail color='gray' />
                 </InputLeftElement>
-                <Input placeholder='E-mail' />
+                <Input type="email" placeholder='E-mail' aria-label='E-mail' />
               </InputGroup>
               <InputGroup>
                 <InputLeftElement pointerEvents='none'>
@@ -26,16 +26,16 @@ export default function Login(){
               
                 <Button colorScheme="blue" size="md">Entrar</Button>
                 <Box textAlign="center">
-                  <Text> Não tem uma conta?</Text>
-                  <Link to={`register`}>Clique aqui</Link>
+                   <Text>Não tem uma conta?</Text>
+                   <Link to={`register`} color="blue.500"><Text color="blue.500">Clique aqui</Text></Link>
                 </Box>
               
             </VStack>
-            <VStack width="50%" alignItems="flex-start">
-              <Text fontSize="lg" fontWeight="bold" mb={4}>O que é isso?</Text>
-              <Text >LoginJWT é um projeto simples que surgiu com o objetivo de colocar em prática todas as boas práticas (que eu conheço) na criação de um sistema de autenticação.</Text>
-              <Link to={`about`}>Saiba mais.</Link>
-            </VStack>
+              <VStack width="50%" alignItems="flex-start" justifyContent="center" spacing={4}>
+              <Text fontSize="lg" fontWeight="bold">O que é isso?</Text>
+              <Text>LoginJWT é um projeto simples que surgiu com o objetivo de colocar em prática todas as boas práticas (que eu conheço) na criação de um sistema de autenticação.</Text>
+              <Link to={`about`} color="blue.500"><Text color="blue.500">Saiba mais</Text></Link>
+          </VStack>
           </HStack>
         
       </Box>
